@@ -1,0 +1,45 @@
+{
+  "task": "Ablation study for multimodal music genre classification",
+  "models": [
+    {
+      "Model": "DistilBERT Title",
+      "Accuracy": 0.2662,
+      "Macro-F1": 0.2499,
+      "Micro-F1": 0.2662,
+      "Macro AUC-PR": 0.2551
+    },
+    {
+      "Model": "CNN",
+      "Accuracy": 0.315,
+      "Macro-F1": 0.294,
+      "Micro-F1": 0.315,
+      "Macro AUC-PR": 0.3248
+    },
+    {
+      "Model": "GraphSAGE",
+      "Accuracy": 0.3713,
+      "Macro-F1": 0.3588,
+      "Micro-F1": 0.3713,
+      "Macro AUC-PR": 0.3872
+    },
+    {
+      "Model": "Simple GNN+BERT",
+      "Accuracy": 0.4037,
+      "Macro-F1": 0.4078,
+      "Micro-F1": 0.4037,
+      "Macro AUC-PR": 0.4271
+    },
+    {
+      "Model": "Cross-Attention GNN+BERT",
+      "Accuracy": 0.405,
+      "Macro-F1": 0.4118,
+      "Micro-F1": 0.405,
+      "Macro AUC-PR": 0.4325
+    }
+  ],
+  "best_model": "Cross-Attention GNN+BERT",
+  "best_test_accuracy": 0.405,
+  "best_test_macro_f1": 0.4118,
+  "best_test_micro_f1": 0.405,
+  "best_test_macro_auc_pr": 0.4325
+}

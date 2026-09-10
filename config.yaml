@@ -1,0 +1,60 @@
+project:
+  name: GNN-BERT Music
+  author: Tabarak Tasnim Tanu
+  university: BRAC University
+  student_id: 24341067
+
+dataset:
+  name: FMA-small
+  sample_rate: 22050
+  segment_duration: 5
+  n_mels: 128
+  num_classes: 8
+
+splits:
+  train_size: 6400
+  validation_size: 800
+  test_size: 800
+
+audio_graph:
+  node_feature: log_mel
+  feature_dimension: 128
+  temporal_edges: true
+  similarity_edges: true
+  similarity_metric: cosine
+  top_k_similarity: 2
+  normalization: StandardScaler
+  scaler_fit_on: train_only
+
+bert:
+  model_name: distilbert-base-uncased
+  max_length: 32
+  frozen_encoder: true
+  embedding_dimension: 768
+
+graphsage:
+  input_dimension: 128
+  hidden_dimension: 128
+  num_layers: 2
+  pooling: global_mean
+
+fusion:
+  type: cross_attention
+  audio_dimension: 128
+  bert_dimension: 768
+  hidden_dimension: 128
+  num_attention_heads: 4
+
+training:
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  dropout: 0.3
+
+evaluation:
+  metrics:
+    - accuracy
+    - macro_f1
+    - micro_f1
+    - macro_auc_pr
+  random_state: 42

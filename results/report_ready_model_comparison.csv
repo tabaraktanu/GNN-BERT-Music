@@ -1,0 +1,6 @@
+Model,Accuracy,Macro-F1,Micro-F1,Macro AUC-PR
+DistilBERT Title,26.62,24.99,26.62,25.51
+CNN,31.5,29.4,31.5,32.48
+GraphSAGE,37.13,35.88,37.13,38.72
+Simple GNN+BERT,40.38,40.78,40.38,42.71
+Cross-Attention GNN+BERT,40.5,41.18,40.5,43.25

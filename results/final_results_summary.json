@@ -1,0 +1,144 @@
+{
+  "project": "GNN + BERT Music Context/Tag Prediction",
+  "dataset": {
+    "name": "FMA-small",
+    "num_classes": 8,
+    "classes": [
+      "Electronic",
+      "Experimental",
+      "Folk",
+      "Hip-Hop",
+      "Instrumental",
+      "International",
+      "Pop",
+      "Rock"
+    ],
+    "official_split": {
+      "train": 6400,
+      "validation": 800,
+      "test": 800
+    },
+    "valid_graphs": {
+      "train": 6394,
+      "validation": 800,
+      "test": 800
+    }
+  },
+  "methodology": {
+    "audio_segment_duration_seconds": 5,
+    "audio_sample_rate": 22050,
+    "audio_feature": "128-bin log-Mel spectrogram averaged over time",
+    "graph_temporal_edges": true,
+    "graph_similarity_edges": true,
+    "similarity_top_k": 2,
+    "bert_model": "distilbert-base-uncased",
+    "bert_encoder_frozen": true,
+    "bert_max_length": 32
+  },
+  "model_comparison": [
+    {
+      "Model": "DistilBERT Title",
+      "Accuracy": 26.62,
+      "Macro-F1": 24.99,
+      "Micro-F1": 26.62,
+      "Macro AUC-PR": 25.51
+    },
+    {
+      "Model": "CNN",
+      "Accuracy": 31.5,
+      "Macro-F1": 29.4,
+      "Micro-F1": 31.5,
+      "Macro AUC-PR": 32.48
+    },
+    {
+      "Model": "GraphSAGE",
+      "Accuracy": 37.13,
+      "Macro-F1": 35.88,
+      "Micro-F1": 37.13,
+      "Macro AUC-PR": 38.72
+    },
+    {
+      "Model": "Simple GNN+BERT",
+      "Accuracy": 40.37,
+      "Macro-F1": 40.78,
+      "Micro-F1": 40.37,
+      "Macro AUC-PR": 42.71
+    },
+    {
+      "Model": "Cross-Attention GNN+BERT",
+      "Accuracy": 40.5,
+      "Macro-F1": 41.18,
+      "Micro-F1": 40.5,
+      "Macro AUC-PR": 43.25
+    }
+  ],
+  "best_model": {
+    "model": "Cross-Attention GNN+BERT",
+    "test_accuracy": 40.5,
+    "test_macro_f1": 41.18,
+    "test_micro_f1": 40.5,
+    "test_macro_auc_pr": 43.25,
+    "best_validation_accuracy": 46.75
+  },
+  "case_studies": [
+    {
+      "track_id": 1066,
+      "title": "Helicopter de Cristal",
+      "true_genre": "Experimental",
+      "case_type": "Fusion succeeds over both unimodal models",
+      "num_audio_nodes": 6,
+      "num_edges": 16,
+      "audio_feature_dim": 128,
+      "bert_prediction": "International",
+      "bert_confidence": 0.3947874903678894,
+      "graphsage_prediction": "Instrumental",
+      "graphsage_confidence": 0.264774888753891,
+      "simple_fusion_prediction": "Experimental",
+      "simple_fusion_confidence": 0.294058233499527,
+      "cross_attention_prediction": "Experimental",
+      "cross_attention_confidence": 0.2588118016719818
+    },
+    {
+      "track_id": 4108,
+      "title": "New Wave Hippies",
+      "true_genre": "Rock",
+      "case_type": "Fusion succeeds over BERT",
+      "num_audio_nodes": 5,
+      "num_edges": 12,
+      "audio_feature_dim": 128,
+      "bert_prediction": "Experimental",
+      "bert_confidence": 0.4443475902080536,
+      "graphsage_prediction": "Rock",
+      "graphsage_confidence": 0.8224425315856934,
+      "simple_fusion_prediction": "Rock",
+      "simple_fusion_confidence": 0.9433950185775757,
+      "cross_attention_prediction": "Rock",
+      "cross_attention_confidence": 0.6454663872718811
+    },
+    {
+      "track_id": 704,
+      "title": "Mano De Dios",
+      "true_genre": "International",
+      "case_type": "Fusion succeeds over GraphSAGE",
+      "num_audio_nodes": 5,
+      "num_edges": 12,
+      "audio_feature_dim": 128,
+      "bert_prediction": "International",
+      "bert_confidence": 0.44509357213974,
+      "graphsage_prediction": "Rock",
+      "graphsage_confidence": 0.614908754825592,
+      "simple_fusion_prediction": "International",
+      "simple_fusion_confidence": 0.5369160771369934,
+      "cross_attention_prediction": "International",
+      "cross_attention_confidence": 0.5078644156455994
+    }
+  ],
+  "important_limitations": [
+    "The current text task is title-only 8-class genre classification rather than true multi-label music-tag prediction.",
+    "The text encoder uses DistilBERT rather than full BERT.",
+    "The BERT encoder is frozen and only the classification head is trained.",
+    "GraphSAGE uses all complete 5-second segments per track, whereas the CNN baseline uses only the first complete 5-second segment.",
+    "Six official training tracks were excluded from graph generation because their audio was missing, unreadable, or shorter than 5 seconds.",
+    "The Cross-Attention improvement over simple fusion is modest; most of the multimodal gain comes from combining audio and text rather than the attention mechanism alone."
+  ]
+}

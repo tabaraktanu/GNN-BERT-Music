@@ -1,0 +1,32 @@
+[
+  {
+    "track_id":1066,
+    "title":"Helicopter de Cristal",
+    "true_genre":"Experimental",
+    "case_type":"Fusion succeeds over both unimodal models",
+    "bert_prediction":"International",
+    "graphsage_prediction":"Instrumental",
+    "simple_fusion_prediction":"Experimental",
+    "cross_attention_prediction":"Experimental"
+  },
+  {
+    "track_id":4108,
+    "title":"New Wave Hippies",
+    "true_genre":"Rock",
+    "case_type":"Fusion succeeds over BERT",
+    "bert_prediction":"Experimental",
+    "graphsage_prediction":"Rock",
+    "simple_fusion_prediction":"Rock",
+    "cross_attention_prediction":"Rock"
+  },
+  {
+    "track_id":704,
+    "title":"Mano De Dios",
+    "true_genre":"International",
+    "case_type":"Fusion succeeds over GraphSAGE",
+    "bert_prediction":"International",
+    "graphsage_prediction":"Rock",
+    "simple_fusion_prediction":"International",
+    "cross_attention_prediction":"International"
+  }
+]

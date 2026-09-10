@@ -1,0 +1,4 @@
+track_id,title,true_genre,case_type,bert_prediction,graphsage_prediction,simple_fusion_prediction,cross_attention_prediction
+1066,Helicopter de Cristal,Experimental,Fusion succeeds over both unimodal models,International,Instrumental,Experimental,Experimental
+4108,New Wave Hippies,Rock,Fusion succeeds over BERT,Experimental,Rock,Rock,Rock
+704,Mano De Dios,International,Fusion succeeds over GraphSAGE,International,Rock,International,International

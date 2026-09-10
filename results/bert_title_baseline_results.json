@@ -1,0 +1,67 @@
+{
+    "model": "distilbert-base-uncased",
+    "task": "title-only 8-class genre classification",
+    "encoder_frozen": true,
+    "max_length": 32,
+    "hidden_dim": 256,
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 20,
+    "best_epoch": 15,
+    "best_validation_accuracy": 0.2825,
+    "test_accuracy": 0.26625,
+    "test_macro_f1": 0.2499078180512302,
+    "test_micro_f1": 0.26625,
+    "test_macro_auc_pr": 0.25512523006481524,
+    "per_class": {
+        "Electronic": {
+            "precision": 0.2336448598130841,
+            "recall": 0.25,
+            "f1": 0.24154589371980675,
+            "support": 100
+        },
+        "Experimental": {
+            "precision": 0.2023121387283237,
+            "recall": 0.35,
+            "f1": 0.2564102564102564,
+            "support": 100
+        },
+        "Folk": {
+            "precision": 0.1506849315068493,
+            "recall": 0.11,
+            "f1": 0.12716763005780346,
+            "support": 100
+        },
+        "Hip-Hop": {
+            "precision": 0.3096774193548387,
+            "recall": 0.48,
+            "f1": 0.3764705882352941,
+            "support": 100
+        },
+        "Instrumental": {
+            "precision": 0.20689655172413793,
+            "recall": 0.18,
+            "f1": 0.1925133689839572,
+            "support": 100
+        },
+        "International": {
+            "precision": 0.5,
+            "recall": 0.55,
+            "f1": 0.5238095238095238,
+            "support": 100
+        },
+        "Pop": {
+            "precision": 0.21621621621621623,
+            "recall": 0.08,
+            "f1": 0.11678832116788321,
+            "support": 100
+        },
+        "Rock": {
+            "precision": 0.22413793103448276,
+            "recall": 0.13,
+            "f1": 0.16455696202531644,
+            "support": 100
+        }
+    }
+}

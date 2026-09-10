@@ -1,0 +1,4 @@
+track_id,title,true_genre,case_type,num_audio_nodes,num_edges,audio_feature_dim,bert_prediction,bert_confidence,graphsage_prediction,graphsage_confidence,simple_fusion_prediction,simple_fusion_confidence,cross_attention_prediction,cross_attention_confidence
+1066,Helicopter de Cristal,Experimental,Fusion succeeds over both unimodal models,6,16,128,International,0.3947874903678894,Instrumental,0.264774888753891,Experimental,0.294058233499527,Experimental,0.2588118016719818
+4108,New Wave Hippies,Rock,Fusion succeeds over BERT,5,12,128,Experimental,0.4443475902080536,Rock,0.8224425315856934,Rock,0.9433950185775757,Rock,0.6454663872718811
+704,Mano De Dios,International,Fusion succeeds over GraphSAGE,5,12,128,International,0.44509357213974,Rock,0.614908754825592,International,0.5369160771369934,International,0.5078644156455994

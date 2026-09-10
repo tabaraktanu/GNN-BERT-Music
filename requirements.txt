@@ -1,0 +1,12 @@
+numpy
+pandas
+scikit-learn
+torch
+torch-geometric
+transformers
+librosa
+matplotlib
+seaborn
+joblib
+jupyter
+ipykernel

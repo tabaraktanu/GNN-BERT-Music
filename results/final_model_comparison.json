@@ -1,0 +1,37 @@
+[
+  {
+    "Model":"DistilBERT Title",
+    "Accuracy":0.26625,
+    "Macro-F1":0.2499078181,
+    "Micro-F1":0.26625,
+    "Macro AUC-PR":0.2551252301
+  },
+  {
+    "Model":"CNN",
+    "Accuracy":0.315,
+    "Macro-F1":0.294,
+    "Micro-F1":0.315,
+    "Macro AUC-PR":0.3248
+  },
+  {
+    "Model":"GraphSAGE",
+    "Accuracy":0.3713,
+    "Macro-F1":0.3588,
+    "Micro-F1":0.3713,
+    "Macro AUC-PR":0.3872
+  },
+  {
+    "Model":"Simple GNN+BERT",
+    "Accuracy":0.40375,
+    "Macro-F1":0.4077549511,
+    "Micro-F1":0.40375,
+    "Macro AUC-PR":0.4271416721
+  },
+  {
+    "Model":"Cross-Attention GNN+BERT",
+    "Accuracy":0.405,
+    "Macro-F1":0.4118469966,
+    "Micro-F1":0.405,
+    "Macro AUC-PR":0.4324791435
+  }
+]
